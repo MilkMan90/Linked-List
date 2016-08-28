@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Linked List</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js" async></script>
+  </head>
+  <body>
+    <h1>Bookmark Maker - Linked List</h1>
+
+    <section id="add-bookmark">
+      <section class="inputs">
+        <span> Title</span>
+        <input type="text" id="title-input" length="20" placeholder="Enter a name for your bookmark">
+      </section>
+
+      <section class="inputs">
+        <span> URL</span>
+        <input type="text" id="url-input" length = "50" placeholder="Enter Bookmark URL">
+      </section>
+    </section>
+
+    <section id="buttons">
+      <button class='btn' id="add-button">Add Bookmark</button>
+    </section>
+
+    <section id="totals">
+      <p id='total-links'>Total Links: </p>
+      <p id='total-read-links'>Total Read Links: </p>
+      <p id='total-unread-links'>Total Unread Links: </p>
+    </section>
+
+    <h2>My Bookmarks</h2>
+    <ul id="my-bookmarks">
+      <button class='btn' id="clear-all-read">Clear Read Bookmarks</button>
+    </ul>
+
+  </body>
+</html>
