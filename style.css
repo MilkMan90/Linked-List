@@ -1,0 +1,111 @@
+body{
+  font-family: Raleway;
+}
+
+h1{
+  font-size: 30px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+input{
+  width: 300px;
+  font-size: 20px;
+  border-width: 3px;
+}
+
+.inputs{
+  margin: 10px;
+}
+
+.red-error{
+  border-color: red;
+  color: red;
+}
+
+#add-bookmark{
+  margin-top: 30px;
+  text-align: center;
+}
+
+#add-bookmark span{
+
+}
+
+#add-bookmark input{
+  margin-right: 10px;
+}
+
+
+.btn{
+  background-color: deepSkyBlue;
+  border-color: deepSkyBlue;
+  color: white;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#add-button{
+  height: 50px;
+  width: 275px;
+}
+
+#clear-all-read{
+  height: 30px;
+  width: 150px;
+}
+
+
+#add-button:disabled{
+  background-color:gray;
+  color: white;
+}
+
+#totals{
+  text-align: center;
+}
+
+#total-links, #total-read-links, #total-unread-links{
+  margin: 5px;
+}
+#my-bookmarks {
+  text-align: center;
+}
+
+#my-bookmarks li{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: auto;
+  border: 2px black solid;
+}
+
+#my-bookmarks li a{
+  width: 300px;
+  text-align: left;
+  display: inline-block;
+}
+#my-bookmarks li #buttons{
+  margin-left: auto;
+  margin-right: 30px;
+  right: 10px;
+  display: inline-block;
+}
+.new-bookmark{
+
+}
+
+.read{
+  color: purple;
+}
+
+.mark-as-read{
+  margin-left: 30px;
+}
+.remove-bookmark{
+  margin: 5px;
+  text-align: right;
+}
