@@ -9,7 +9,16 @@ function checkToDisableSubmit(){
   }
 }
 
+function updateTotalDisplay(){
+  $("#total-links").html("Total Links: "+totalLinks);
+  $("#total-read-links").html("Total Read Links: "+totalReadLinks);
+  $("#total-unread-links").html("Total Unread Links: "+totalUnreadLinks);
+}
 
+
+//run once on page load
+checkToDisableSubmit();
+updateTotalDisplay();
 
 // Add new bookmark with associated 'remove' link when 'add' button is clicked.
 $('#add-button').on('click', function() {
@@ -53,6 +62,18 @@ $('#add-button').on('click', function() {
     }
 });
 
+//remove error class when key is pressed inside input boxes
+$('#url-input').on('keyup', function(){
+
+  if($("#url-input").val()){
+    $("#url-input").removeClass('red-error');
+    $("#url-input").siblings('span').removeClass('red-error');
+    $('#add-button').prop('disabled', false);
+  }
+
+  checkToDisableSubmit();
+
+});
 
 $("#my-bookmarks").on('click', '.remove-bookmark', function() {
     $(this).parent().parent().remove();
