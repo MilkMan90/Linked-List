@@ -64,15 +64,39 @@ $('#add-button').on('click', function() {
 
 //remove error class when key is pressed inside input boxes
 $('#url-input').on('keyup', function(){
-
   if($("#url-input").val()){
     $("#url-input").removeClass('red-error');
     $("#url-input").siblings('span').removeClass('red-error');
     $('#add-button').prop('disabled', false);
   }
-
   checkToDisableSubmit();
+});
 
+$('#title-input').on('keyup', function(){
+  if($("#title-input").val()){
+    $("#title-input").removeClass('red-error');
+    $("#title-input").siblings('span').removeClass('red-error');
+    $('#add-button').prop('disabled', false);
+  }
+  checkToDisableSubmit();
+});
+
+$('#clear-all-read').on('click', function(){
+  $(".read").parent().remove();
+});
+
+$("#my-bookmarks").on('click', '.mark-as-read', function(){
+  if($(this).parent().siblings('a').hasClass('read')){
+    $(this).parent().parent().remove();
+    totalLinks--;
+    totalReadLinks--;
+  }else{
+    $(this).parent().siblings('a').addClass('read');
+    console.log('test test test');
+    totalUnreadLinks--;
+    totalReadLinks++;
+  }
+  updateTotalDisplay();
 });
 
 $("#my-bookmarks").on('click', '.remove-bookmark', function() {
