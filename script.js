@@ -37,7 +37,8 @@ function addBookmarkToPage(){
     totalUnreadLinks++;
     $("#my-bookmarks").append(
         '<li>' +
-          '<a href="'+url+'class = "new-bookmark" target="_blank">'+title+'</a>'+
+          '<span>'+title+'</span>'+
+          '<a href='+url+" class='new-bookmark' target='_blank'>"+url+'</a>'+
           '<section id="buttons">'+
           '<button class="mark-as-read">Mark as Read</button>'+
           '<button class="remove-bookmark">Remove Bookmark</button>' +
