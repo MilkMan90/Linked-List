@@ -19,11 +19,13 @@ h1{
 h2{
   display: flex;
   justify-content: center;
-  background-color: #3C62A3;
+  background-color: #8C7ECC;
+  border-radius: 5px;
   color: white;
-  padding: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 8px;
+  width: auto;
+  margin: 20px 20px 10px 20px;
+
 }
 
 input{
@@ -97,25 +99,26 @@ button{
 }
 
 #my-bookmarks li{
-  background-color: #AABFE3;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  width: auto;
-  height: 70px;
-  border: 2px #BEA023 solid;
-  display: flex;
   align-items: center;
+  background-color: #AABFE3;
+  box-shadow: 5px 5px 5px #888888;
+  display: flex;
   justify-content: flex-end;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  height: 70px;
+  width: auto;
 }
 
 #my-bookmarks li a{
-  width: 300px;
   margin-left: 50px;
+  width: 400px;
 }
 #my-bookmarks li #buttons{
   justify-content: flex-end;
   align-items: center;
+  flex-wrap: wrap;
 }
 .new-bookmark{
 
@@ -126,8 +129,12 @@ button{
 }
 
 .mark-as-read{
-  margin-left: 30px;
+  margin-left: 5px;
 }
+
 .remove-bookmark{
   margin: 5px;
+}
+
+.mark-as-read, .remove-bookmark{
 }

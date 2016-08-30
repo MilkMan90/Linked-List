@@ -105,6 +105,9 @@ $('#title-input').on('keyup', function(){
 
 $('#clear-all-read').on('click', function(){
   $(".read").parent().remove();
+  totalLinks = totalLinks - totalReadLinks;
+  totalReadLinks = 0;
+  updateTotalDisplay();
 });
 
 $("#my-bookmarks").on('click', '.mark-as-read', function(){
