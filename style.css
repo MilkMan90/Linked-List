@@ -100,12 +100,7 @@ button{
 }
 
 #my-bookmarks li{
-  align-items: center;
-  background-color: #AABFE3;
   box-shadow: 5px 5px 5px #888888;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
   margin-top: 10px;
   margin-left: 50px;
   margin-right: 50px;
@@ -113,6 +108,15 @@ button{
   width: auto;
 }
 
+.container{
+  background-color: #AABFE3;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  height: auto;
+  width: auto;
+}
 
 #my-bookmarks li span{
   font-size: 20px;
@@ -139,7 +143,6 @@ button{
 
 .read{
   background-color: #5342A9;
-  height: 200px;
 }
 
 .mark-as-read{

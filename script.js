@@ -40,12 +40,14 @@ function addBookmarkToPage(){
     totalLinks++;
     $("#my-bookmarks").append(
         '<li>' +
-          '<span>'+title+'</span>'+
-          '<a href='+url+" class='new-bookmark' target='_blank'>"+url+'</a>'+
-          '<section id="buttons">'+
-          '<button class="mark-as-read">Mark as Read</button>'+
-          '<button class="remove-bookmark">Remove Bookmark</button>' +
-          '</section>'+
+          '<div class="container">'+
+            '<span>'+title+'</span>'+
+            '<a href='+url+" class='new-bookmark' target='_blank'>"+url+'</a>'+
+            '<section id="buttons">'+
+            '<button class="mark-as-read">Mark as Read</button>'+
+            '<button class="remove-bookmark">Remove Bookmark</button>' +
+            '</section>'+
+          '</div>'+
         '</li>'
     );
 
@@ -121,8 +123,8 @@ $('#clear-all-read').on('click', function(){
 
 $('#my-bookmarks').on('click', 'a', function(){
 
-  if($(this).hasClass('read')){
-    $(this).parent().remove();
+  if($(this).parent().hasClass('read')){
+    $(this).parent().parent().remove();
     totalLinks--;
   }else{
     $(this).parent().addClass('read');
@@ -133,7 +135,7 @@ $('#my-bookmarks').on('click', 'a', function(){
 
 $("#my-bookmarks").on('click', '.mark-as-read', function(){
   if($(this).parent().parent().hasClass('read')){
-    $(this).parent().parent().remove();
+    $(this).parent().parent().parent().remove();
     totalLinks--;
   }else{
     $(this).parent().parent().addClass('read');
@@ -142,7 +144,7 @@ $("#my-bookmarks").on('click', '.mark-as-read', function(){
 });
 
 $("#my-bookmarks").on('click', '.remove-bookmark', function() {
-    $(this).parent().parent().remove();
+    $(this).parent().parent().parent().remove();
     totalLinks--;
     updateTotalDisplay();
 });
