@@ -19,12 +19,28 @@ function updateTotalDisplay(){
   $("#total-unread-links").html("Total Unread Links: "+totalUnreadLinks);
 }
 
+function checkValidURL(input){
+  var urlArray = input.split('');
+  if(urlArray[0]==='h' && urlArray[1]==='t' && urlArray[2]==='t' && urlArray[3]==='p' && urlArray[4]==='s' &&
+    urlArray[5]===':' && urlArray[6]==='/' && urlArray[7]==='/'){
+      return true;
+    } else{
+      return false;
+    }
+}
+
 function addBookmarkToPage(){
   var url = $("#url-input").val();
   var title = $("#title-input").val();
-  console.log(url);
-  console.log(title);
 
+  if(!checkValidURL(url)){
+    //add error message
+    $(".error-message").css('visibility', 'visible');
+    $("#url-input").addClass('red-error');
+    return;
+  }else{
+    $(".error-message").css('visibility', 'hidden');
+  }
 
   if(!$("#title-input").val()){
     $("#title-input").addClass('red-error');
@@ -122,7 +138,6 @@ $('#clear-all-read').on('click', function(){
 });
 
 $('#my-bookmarks').on('click', 'a', function(){
-
   if($(this).parent().hasClass('read')){
     $(this).parent().parent().remove();
     totalLinks--;

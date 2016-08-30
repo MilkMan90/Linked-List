@@ -26,13 +26,20 @@ h2{
   padding: 5px;
   width: auto;
   margin: 20px 20px 10px 20px;
-
 }
 
 input{
   width: 300px;
   font-size: 20px;
   border-width: 3px;
+}
+
+.error-message{
+  visibility: hidden;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .inputs{
@@ -47,7 +54,7 @@ input{
 
 #add-bookmark{
   display: flex;
-  margin-top: 30px;
+  margin-top: 10px;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -76,16 +83,17 @@ button{
 
 }
 
-#clear-all-read{
-  height: 30px;
-  width: 150px;
-}
-
 #add-button:disabled{
   background-color: whitesmoke;
   border-color: lightgray;
   color: gray;
 }
+#clear-all-read{
+  height: 30px;
+  width: 150px;
+}
+
+
 
 #totals{
   text-align: center;
