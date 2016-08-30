@@ -60,12 +60,12 @@ function addBookmarkToPage(){
             '<span>'+title+'</span>'+
             '<a href='+url+" class='new-bookmark' target='_blank'>"+url+'</a>'+
             '<section id="buttons">'+
-            '<button class="mark-as-read">Mark as Read</button>'+
-            '<button class="remove-bookmark">Remove Bookmark</button>' +
+              '<button class="mark-as-read">Mark as Read</button>'+
+              '<button class="remove-bookmark">Remove Bookmark</button>' +
             '</section>'+
           '</div>'+
         '</li>'
-    );
+    ).slideDown('slow');
 
     //clear inputs
     $("#title-input").val('');
@@ -76,10 +76,6 @@ function addBookmarkToPage(){
   }
 }
 
-function addReadClass(){
-
-
-}
 //run once on page load
 checkToDisableSubmit();
 updateTotalDisplay();
@@ -145,7 +141,6 @@ $('#my-bookmarks').on('click', 'a', function(){
     $(this).parent().addClass('read');
   }
   updateTotalDisplay();
-
 });
 
 $("#my-bookmarks").on('click', '.mark-as-read', function(){
