@@ -125,18 +125,18 @@ $('#my-bookmarks').on('click', 'a', function(){
     $(this).parent().remove();
     totalLinks--;
   }else{
-    $(this).addClass('read');
+    $(this).parent().addClass('read');
   }
   updateTotalDisplay();
 
 });
 
 $("#my-bookmarks").on('click', '.mark-as-read', function(){
-  if($(this).parent().siblings('a').hasClass('read')){
+  if($(this).parent().parent().hasClass('read')){
     $(this).parent().parent().remove();
     totalLinks--;
   }else{
-    $(this).parent().siblings('a').addClass('read');
+    $(this).parent().parent().addClass('read');
   }
   updateTotalDisplay();
 });

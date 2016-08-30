@@ -19,10 +19,11 @@ h1{
 h2{
   display: flex;
   justify-content: center;
-  background-color: #8C7ECC;
+  background-color: white;
+  border: 5px solid #8C7ECC;
   border-radius: 5px;
-  color: white;
-  padding: 8px;
+  color: #8C7ECC;
+  padding: 5px;
   width: auto;
   margin: 20px 20px 10px 20px;
 
@@ -99,7 +100,6 @@ button{
 }
 
 #my-bookmarks li{
-
   align-items: center;
   background-color: #AABFE3;
   box-shadow: 5px 5px 5px #888888;
@@ -116,24 +116,30 @@ button{
 
 #my-bookmarks li span{
   font-size: 20px;
+  color: white;
   margin-left: 20px;
 }
+
 #my-bookmarks li a{
   font-size: 20px;
+  color: white;
   margin-left: auto;
   margin-right: auto;
 }
+
 #my-bookmarks li #buttons{
   justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
 }
+
 .new-bookmark{
 
 }
 
 .read{
-  color: purple;
+  background-color: #5342A9;
+  height: 200px;
 }
 
 .mark-as-read{
