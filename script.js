@@ -15,50 +15,72 @@ function updateTotalDisplay(){
   $("#total-unread-links").html("Total Unread Links: "+totalUnreadLinks);
 }
 
+function addBookmarkToPage(){
+  var url = $("#url-input").val();
+  var title = $("#title-input").val();
+  console.log(url);
+  console.log(title);
 
+
+  if(!$("#title-input").val()){
+    $("#title-input").addClass('red-error');
+    $("#title-input").siblings('span').addClass('red-error');
+  }
+
+  if(!$("#url-input").val()){
+    $("#url-input").addClass('red-error');
+    $("#url-input").siblings('span').addClass('red-error');
+  }
+
+  if($("#title-input").val() && $("#url-input").val()){
+    totalLinks++;
+    totalUnreadLinks++;
+    $("#my-bookmarks").append(
+        '<li>' +
+          '<a href="'+url+'class = "new-bookmark" target="_blank">'+title+'</a>'+
+          '<section id="buttons">'+
+          '<button class="mark-as-read">Mark as Read</button>'+
+          '<button class="remove-bookmark">Remove Bookmark</button>' +
+          '</section>'+
+        '</li>'
+    );
+
+    //clear inputs
+    $("#title-input").val('');
+    $("#url-input").val('');
+
+    checkToDisableSubmit();
+    updateTotalDisplay();
+  }
+}
 //run once on page load
 checkToDisableSubmit();
 updateTotalDisplay();
 
 // Add new bookmark with associated 'remove' link when 'add' button is clicked.
 $('#add-button').on('click', function() {
-    console.log('test');
-    var url = $("#url-input").val();
-    var title = $("#title-input").val();
-    console.log(url);
-    console.log(title);
+    addBookmarkToPage();
+});
 
+$('#url-input').bind("enterKey",function(e){
+   addBookmarkToPage();
+});
 
-    if(!$("#title-input").val()){
-      $("#title-input").addClass('red-error');
-      $("#title-input").siblings('span').addClass('red-error');
+$('#title-input').bind("enterKey",function(e){
+   addBookmarkToPage();
+});
+
+$('#url-input').keyup(function(e){
+    if(e.keyCode == 13)
+    {
+        $(this).trigger("enterKey");
     }
+});
 
-    if(!$("#url-input").val()){
-      $("#url-input").addClass('red-error');
-      $("#url-input").siblings('span').addClass('red-error');
-    }
-
-    if($("#title-input").val() && $("#url-input").val()){
-      totalLinks++;
-      totalUnreadLinks++;
-      $("#my-bookmarks").append(
-          '<li>' +
-            '<a href="'+url+'class = "new-bookmark" target="_blank">'+title+'</a>'+
-            '<section id="buttons">'+
-            '<button class="mark-as-read">Mark as Read</button>'+
-            '<button class="remove-bookmark">Remove Bookmark</button>' +
-            '</section>'+
-          '</li>'
-      );
-
-      //clear inputs
-      $("#title-input").val('');
-      $("#url-input").val('');
-
-      checkToDisableSubmit();
-      updateTotalDisplay();
-
+$('#title-input').keyup(function(e){
+    if(e.keyCode == 13)
+    {
+        $(this).trigger("enterKey");
     }
 });
 

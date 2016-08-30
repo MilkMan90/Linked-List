@@ -2,10 +2,28 @@ body{
   font-family: Raleway;
 }
 
+header{
+  display: flex;
+  height: 70px;
+  background-color: #3C62A3;
+  justify-content: center;
+  align-items: center;
+}
+
 h1{
   font-size: 30px;
   text-align: center;
-  margin-top: 30px;
+  color: white;
+}
+
+h2{
+  display: flex;
+  justify-content: center;
+  background-color: #3C62A3;
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 input{
@@ -16,6 +34,7 @@ input{
 
 .inputs{
   margin: 10px;
+  justify-content: center;
 }
 
 .red-error{
@@ -24,33 +43,34 @@ input{
 }
 
 #add-bookmark{
+  display: flex;
   margin-top: 30px;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 #add-bookmark span{
-
+  margin-right: 5px;
 }
 
 #add-bookmark input{
   margin-right: 10px;
 }
 
-
-.btn{
-  background-color: deepSkyBlue;
-  border-color: deepSkyBlue;
+button{
+  background-color: #F5B84A;
+  border-color: #FFD790;
   color: white;
-  display:block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 #add-button{
+  display: flex;
+  justify-content: center;
   height: 50px;
   width: 275px;
+  margin: auto;
+
 }
 
 #clear-all-read{
@@ -58,10 +78,10 @@ input{
   width: 150px;
 }
 
-
 #add-button:disabled{
-  background-color:gray;
-  color: white;
+  background-color: whitesmoke;
+  border-color: lightgray;
+  color: gray;
 }
 
 #totals{
@@ -71,28 +91,31 @@ input{
 #total-links, #total-read-links, #total-unread-links{
   margin: 5px;
 }
+
 #my-bookmarks {
   text-align: center;
 }
 
 #my-bookmarks li{
+  background-color: #AABFE3;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
   width: auto;
-  border: 2px black solid;
+  height: 70px;
+  border: 2px #BEA023 solid;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 #my-bookmarks li a{
   width: 300px;
-  text-align: left;
-  display: inline-block;
+  margin-left: 50px;
 }
 #my-bookmarks li #buttons{
-  margin-left: auto;
-  margin-right: 30px;
-  right: 10px;
-  display: inline-block;
+  justify-content: flex-end;
+  align-items: center;
 }
 .new-bookmark{
 
@@ -107,5 +130,4 @@ input{
 }
 .remove-bookmark{
   margin: 5px;
-  text-align: right;
 }
