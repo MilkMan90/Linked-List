@@ -10,6 +10,10 @@ function checkToDisableSubmit(){
 }
 
 function updateTotalDisplay(){
+
+  totalReadLinks = $('.read').length;
+  totalUnreadLinks = totalLinks - totalReadLinks;
+
   $("#total-links").html("Total Links: "+totalLinks);
   $("#total-read-links").html("Total Read Links: "+totalReadLinks);
   $("#total-unread-links").html("Total Unread Links: "+totalUnreadLinks);
@@ -34,7 +38,6 @@ function addBookmarkToPage(){
 
   if($("#title-input").val() && $("#url-input").val()){
     totalLinks++;
-    totalUnreadLinks++;
     $("#my-bookmarks").append(
         '<li>' +
           '<span>'+title+'</span>'+
@@ -53,6 +56,11 @@ function addBookmarkToPage(){
     checkToDisableSubmit();
     updateTotalDisplay();
   }
+}
+
+function addReadClass(){
+
+
 }
 //run once on page load
 checkToDisableSubmit();
@@ -111,16 +119,24 @@ $('#clear-all-read').on('click', function(){
   updateTotalDisplay();
 });
 
+$('#my-bookmarks').on('click', 'a', function(){
+
+  if($(this).hasClass('read')){
+    $(this).parent().remove();
+    totalLinks--;
+  }else{
+    $(this).addClass('read');
+  }
+  updateTotalDisplay();
+
+});
+
 $("#my-bookmarks").on('click', '.mark-as-read', function(){
   if($(this).parent().siblings('a').hasClass('read')){
     $(this).parent().parent().remove();
     totalLinks--;
-    totalReadLinks--;
   }else{
     $(this).parent().siblings('a').addClass('read');
-    console.log('test test test');
-    totalUnreadLinks--;
-    totalReadLinks++;
   }
   updateTotalDisplay();
 });
@@ -128,10 +144,5 @@ $("#my-bookmarks").on('click', '.mark-as-read', function(){
 $("#my-bookmarks").on('click', '.remove-bookmark', function() {
     $(this).parent().parent().remove();
     totalLinks--;
-    if($(this).parent().siblings('a').hasClass('read')){
-      totalReadLinks--;
-    }else{
-      totalUnreadLinks--;
-    }
     updateTotalDisplay();
 });
