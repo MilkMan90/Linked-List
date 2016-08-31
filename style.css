@@ -1,5 +1,5 @@
 body{
-  font-family: Raleway;
+  font-family: Raleway, sans-serif;
 }
 
 header{
@@ -26,13 +26,19 @@ h2{
   color: #8C7ECC;
   padding: 5px;
   width: auto;
-  margin: 20px 20px 10px 20px;
+  margin: 20px 100px 10px 100px;
 }
 
 input{
   width: 280px;
   font-size: 20px;
   border-width: 3px;
+}
+
+button{
+  background-color: #F5B84A;
+  border-color: #FFD790;
+  color: white;
 }
 
 .error-message{
@@ -67,12 +73,6 @@ input{
 
 #add-bookmark input{
   margin-right: 10px;
-}
-
-button{
-  background-color: #F5B84A;
-  border-color: #FFD790;
-  color: white;
 }
 
 #add-button{
@@ -129,7 +129,6 @@ button{
 
 #my-bookmarks li span{
   flex-wrap: wrap;
-  flex: 1;
   word-break: break-all;
   height: auto;
   margin-left: 20px;
@@ -138,7 +137,6 @@ button{
 
 #my-bookmarks li a{
   /*display:flex;*/
-  flex: 1;
   height: auto;
   flex-wrap: wrap;
   word-break: break-all;
@@ -152,10 +150,6 @@ button{
   justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.new-bookmark{
-
 }
 
 .read{
