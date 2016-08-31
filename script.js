@@ -20,12 +20,20 @@ function updateTotalDisplay(){
 }
 
 function checkValidURL(input){
-  var urlArray = input.split('');
-  if(urlArray[0]==='h' && urlArray[1]==='t' && urlArray[2]==='t' && urlArray[3]==='p' && urlArray[4]==='s' &&
-    urlArray[5]===':' && urlArray[6]==='/' && urlArray[7]==='/'){
-      return true;
-    } else{
+  // var urlArray = input.split('');
+  // if(urlArray[0]==='h' && urlArray[1]==='t' && urlArray[2]==='t' && urlArray[3]==='p' && urlArray[4]==='s' &&
+  //   urlArray[5]===':' && urlArray[6]==='/' && urlArray[7]==='/'){
+  //     return true;
+  //   } else{
+  //     return false;
+  //   }
+
+  var urlStatus = input.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+
+  if(urlStatus === null){
       return false;
+    } else{
+      return true;
     }
 }
 
@@ -144,12 +152,6 @@ $('#my-bookmarks').on('click', 'a', function(){
 });
 
 $("#my-bookmarks").on('click', '.mark-as-read', function(){
-  // if($(this).parent().parent().hasClass('read')){
-  //   $(this).parent().parent().parent().remove();
-  //   totalLinks--;
-  // }else{
-  //   $(this).parent().parent().addClass('read');
-  // }
 
   $(this).parent().parent().toggleClass('read');
   updateTotalDisplay();
