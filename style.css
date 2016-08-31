@@ -26,7 +26,7 @@ h2{
   color: #8C7ECC;
   padding: 5px;
   width: auto;
-  margin: 20px 100px 10px 100px;
+  margin: 20px 50px 10px 50px;
 }
 
 input{
@@ -49,10 +49,17 @@ button{
   align-items: center;
 }
 
+.labels{
+  display: block;
+}
+
 .inputs{
   margin: 10px;
-  justify-content: center;
 }
+
+ .inputs span{
+   display: block;
+ }
 
 .red-error{
   border-color: red;
@@ -65,14 +72,6 @@ button{
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-}
-
-#add-bookmark span{
-  margin-right: 5px;
-}
-
-#add-bookmark input{
-  margin-right: 10px;
 }
 
 #add-button{
@@ -127,23 +126,21 @@ button{
   justify-content: flex-end;
 }
 
-#my-bookmarks li span{
+#my-bookmarks li span, #my-bookmarks li a{
+  height: auto;
   flex-wrap: wrap;
   word-break: break-all;
-  height: auto;
-  margin-left: 20px;
+  margin: 3px auto 3px auto;
   min-width: 100px;
 }
 
-#my-bookmarks li a{
-  /*display:flex;*/
+/*#my-bookmarks li a{
   height: auto;
   flex-wrap: wrap;
   word-break: break-all;
   min-width: 100px;
-  margin-left: auto;
-  margin-right: auto;
-}
+  margin: 3px auto 3px auto;
+}*/
 
 #my-bookmarks li .buttons{
   display: flex;
