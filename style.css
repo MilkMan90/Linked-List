@@ -18,9 +18,10 @@ h1{
 
 h2{
   display: flex;
+  font-size: 25px;
   justify-content: center;
   background-color: white;
-  border: 5px solid #8C7ECC;
+  border-bottom: 5px solid #8C7ECC;
   border-radius: 5px;
   color: #8C7ECC;
   padding: 5px;
@@ -87,6 +88,7 @@ button{
   border-color: lightgray;
   color: gray;
 }
+
 #clear-all-read{
   height: 30px;
   width: 150px;
@@ -94,6 +96,7 @@ button{
 
 #totals{
   text-align: center;
+  margin: auto;
 }
 
 #total-links, #total-read-links, #total-unread-links{
@@ -126,17 +129,25 @@ button{
 
 #my-bookmarks li span{
   flex-wrap: wrap;
+  flex: 1;
+  word-break: break-all;
+  height: auto;
   margin-left: 20px;
+  min-width: 100px;
 }
 
 #my-bookmarks li a{
-  display:flex;
+  /*display:flex;*/
+  flex: 1;
+  height: auto;
   flex-wrap: wrap;
+  word-break: break-all;
+  min-width: 100px;
   margin-left: auto;
   margin-right: auto;
 }
 
-#my-bookmarks li #buttons{
+#my-bookmarks li .buttons{
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -160,4 +171,5 @@ button{
 }
 
 .mark-as-read, .remove-bookmark{
+  height: 25px;
 }

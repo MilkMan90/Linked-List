@@ -59,13 +59,13 @@ function addBookmarkToPage(){
           '<div class="container">'+
             '<span>'+title+'</span>'+
             '<a href='+url+" class='new-bookmark' target='_blank'>"+url+'</a>'+
-            '<section id="buttons">'+
+            '<section class="buttons">'+
               '<button class="mark-as-read">Mark as Read</button>'+
               '<button class="remove-bookmark">Remove Bookmark</button>' +
             '</section>'+
           '</div>'+
         '</li>'
-    ).slideDown('slow');
+    );
 
     //clear inputs
     $("#title-input").val('');
