@@ -58,7 +58,7 @@ button:focus {
 }
 
 .inputs{
-  margin: 10px;
+  margin: 5px;
 }
 
 .inputs span{
@@ -72,7 +72,6 @@ button:focus {
 
 #add-bookmark{
   display: flex;
-  margin-top: 10px;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -82,8 +81,9 @@ button:focus {
   display: flex;
   justify-content: center;
   height: 50px;
-  width: 275px;
+  width: 288px;
   margin: auto;
+  margin-top: 12px;
 }
 
 #add-button:disabled{
