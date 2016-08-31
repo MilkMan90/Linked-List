@@ -144,12 +144,14 @@ $('#my-bookmarks').on('click', 'a', function(){
 });
 
 $("#my-bookmarks").on('click', '.mark-as-read', function(){
-  if($(this).parent().parent().hasClass('read')){
-    $(this).parent().parent().parent().remove();
-    totalLinks--;
-  }else{
-    $(this).parent().parent().addClass('read');
-  }
+  // if($(this).parent().parent().hasClass('read')){
+  //   $(this).parent().parent().parent().remove();
+  //   totalLinks--;
+  // }else{
+  //   $(this).parent().parent().addClass('read');
+  // }
+
+  $(this).parent().parent().toggleClass('read');
   updateTotalDisplay();
 });
 

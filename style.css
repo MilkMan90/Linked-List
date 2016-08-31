@@ -41,6 +41,10 @@ button{
   color: white;
 }
 
+button:focus {
+  outline: none;
+}
+
 .error-message{
   visibility: hidden;
   margin-top: 5px;
@@ -107,6 +111,7 @@ button{
 }
 
 #my-bookmarks li{
+  display: block;
   box-shadow: 5px 5px 5px #888888;
   color: white;
   font-size: 20px;
